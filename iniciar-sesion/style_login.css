@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/*:root {
+  --primary-color: rgb(34, 40, 49);
+  --secondary-color: rgb(57, 62, 70);
+  --tertiary-color: rgb(0, 173, 181);
+  --quaternary-color: rgb(238, 238, 238);
+  --font-color: rgb(238, 238, 238);
+  font-size: 14px;
+  --font-family: "Muli", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #393e46;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #222831;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #222831;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #00adb5;
+}
+::-webkit-scrollbar-track:active {
+  background: #00adb5;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+} */
+body {
+  margin: 0px;
+  font-family: "Muli", sans-serif;
+  background-image: linear-gradient(140deg, #21C08B 20%, #070212 250%);
+  /*background-color: para un solo color*/
+}
+
+.header {
+  /* background: linear-gradient(140deg, #21C08B 20%, #070212 250%); */
+  background: #21C08B;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  /*guia para flex https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header__img {
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.login {
+  background: linear-gradient(#21C08B, #AB88FF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px;
+  min-height: calc(100vh - 200px);
+  /*por más grande que sea el alto en la pantalla, siempre va a tener este valor*/
+  /*vh es view height, en este caso ya no es el 100% de toda la vista, si no de lo que solo esta viendo el usuario*/
+  /*-200 por que es el 100% de la vista, menos el tamaño del header y footer */
+}
+
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 40px;
+  box-shadow: -1px 4px 8px 4px rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 60px 68px 40px;
+  min-height: 700px;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.login__container--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__container--form label {
+  font-size: 14px;
+}
+
+.login__container--remember-me {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.login__container--remember-me a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login__container--remember-me a:hover {
+  text-decoration: underline;
+}
+
+.login__container--social-media > div {
+  /*signo mayor que es para que selecciones todos los elelemtnos div */
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login__container--social-media > div > img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.login__container--register {
+  font-size: 14px;
+}
+
+.login__container--register a {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login__container--register a:hover {
+  text-decoration: underline;
+}
+
+.input {
+  background-color: transparent;
+  color: white;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  outline: none;
+  height: 50px;
+}
+
+::placeholder {
+  color: white;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 10px;
+  height: 50px;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.footer {
+  background: #AB88FF;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .login__container {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style_login.css.map */

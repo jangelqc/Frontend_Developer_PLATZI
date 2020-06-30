@@ -1,0 +1,238 @@
+body{
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+    background: linear-gradient(#21C08B, #AB88FF);
+    /*background-color: para un solo color*/
+  }
+  .header {
+    background: #21C08B; 
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /*guia para flex https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  .header__img {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .header__menu {
+    margin-left: 600px;
+  }
+  .header__menu ul {
+    display: none;
+    list-style: none;
+    /*List style: none para que no aparezcan puntos en la lista*/
+    padding: 10px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    /*textos alineados en lado derecho*/
+    margin: 0px 0px 0px -14px;
+  }
+  .header__menu:hover ul, ul:hover {
+    /*Se hace hover en menú para apropiarce de ul, y tambien se hace hover en ul.*/
+    display: block;
+    /*Aparece y bloquea ul mientras el mouse se posa*/
+  }
+  .header__menu li {
+    margin: 10px 0px;
+    /*Cuando se colocan 2 medidas, el primero es top y bottom, el segundo es left y right */
+  }
+  .header__menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  .header__menu li a:hover {
+    text-decoration: underline;
+  }
+  .header__menu--profile {
+    margin-right: 8px;
+    display: flex;
+    cursor: pointer;
+    /*cursor: pointer es para que el mouse sea una manita*/
+  }
+  .header__menu--profile img {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+  }
+  .header__menu--profile p {
+    margin-bottom: 0px;
+    color: white;
+  }
+
+  .main {
+    height: 400px;
+    display: flex;
+    /*las tres propiedaes siguientes son propiedades de flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 400px);
+  }
+
+  .main__title {
+    color: white;
+    font-size: 25px;
+    outline: none;
+  }
+
+  .input {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 2px solid white;
+    border-radius: 30px;
+    /*redondear borde*/
+    color: white;
+    font-family: "Muli", sans-serif;
+    font-size: 16px;
+    height: 50px;
+    padding: 0px 20px;
+    width: 70%;
+    /*es relativa para cambiar según el tamaño de la pantalla*/
+  }
+
+  .input:focus{
+    /*focus es una pseudoclass*/
+    outline: none;
+  }
+
+  ::placeholder {
+     /*pseudoelemento*/
+    color: white;
+    }
+
+  .categories__title {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    /*para que se organice según donde lo pongamos, ya que un contenedor tiene una posición relativa, entonces con absolute se ubica según el componente padre*/
+    padding-left: 30px;
+    width: 100%;
+    }
+
+  .carousel {
+    width: 100%;
+    overflow: scroll;
+    padding-left: 30px;
+    position: relative;
+    /*scrollbar-width: none;*/    
+  }
+
+  .carousel__container {
+    white-space: nowrap;
+    /*que no la envuelva, para que se va todo seguido*/ 
+    margin: 70px 0px;
+    padding-bottom:10px;
+    /*para que la imagen no se corte al hacer hover*/
+  }
+
+  .carousel-item {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    /*esconder la flecha del scroll cuando los elementos no caben en el área designada en pantalla*/
+    margin-right:10px;
+    display: inline-block;
+    /*los items aparecen en linea y no uno debajo de otro*/
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: left;
+    position: relative;
+    /*Es para que el contenedor pueda escoger los estilos y sea relativo a ese itemr*/
+  }
+
+  .carousel-item:hover ~ .carousel-item {
+    /*para darle efectos a los items posteriores al que tiene hover*/
+    transform: translate3d(100px, 0, 0);
+  }
+
+  .carousel__container:hover .carousel-item {
+    opacity: 0.3;   
+  }
+
+  .carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  .carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+  .carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    font-size: 10px;
+    color: white;
+    opacity: 0;
+    transition: 450ms opacity;
+    /*el gradiente aparece con la transición*/
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+  }
+
+  .carousel-item__details img {
+      height: 25px;
+      width: 25px;
+  }
+
+  .carousel-item__details--title {
+      font-weight: bold;
+      margin: 0px;
+  }
+
+  .carousel-item__details--subtitle {
+      margin: 0px;
+  }
+
+  .carousel-item:hover .carousel-item__details {
+      opacity: 1;
+  }
+ /* .carousel::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  } */
+
+  .carousel::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb {
+    background-color: #34274d;
+    border-radius: 5px;
+  }
+  /*ya veremos pa que esto */
+  /* Este es el pseudoelemento para hacer el scroll invisible y no aparezca en la pantalla: */
+  /*https://platzi.com/comentario/1370530/*/
+ 
+  .footer {
+    background: #AB88FF;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+  }
+
+  .footer a {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }

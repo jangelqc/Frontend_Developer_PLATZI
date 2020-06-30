@@ -1,0 +1,32 @@
+.error {
+    display: flex;
+    /*las tres propiedaes siguientes son propiedades de flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px);
+  }
+
+.error__number {
+  color: white;
+  font-size: 100px;
+  margin: 15px 0px;
+  font-family: "Muli", sans-serif;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+.error__subtitle {
+  color: white;
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  margin: 10px 0px;
+}
